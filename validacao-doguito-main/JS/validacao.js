@@ -179,12 +179,22 @@ function recuperarCEP(input) {
                     return
                 }
                 input.setCustomValidity('')
+                preencheCamposComCep(data)
+                return
             }
         )
     }
     }
 
-    function preencheCamposComCep(data)
+    function preencheCamposComCep(data) {
+       const logradouro = document.querySelector('[data-tipo="logradouro"]') 
+       const cidade = document.querySelector('[data-tipo="cidade"]')
+       const estado = document.querySelector('[data-tipo="estado"]')  
+
+       logradouro.value = data.logradouro
+       cidade.value = data.localidade
+       estado.value = data.uf
+    }
 
 
 // 123 456 789 09
